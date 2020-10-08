@@ -1,0 +1,285 @@
+[INFO] 2020-10-05 06:53:12,626 launch: Running torchelastic.distributed.launch with args: ['/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/distributed/launch.py', '--standalone', '--nnodes=1', '--nproc_per_node=8', 'train.py', 'data.train_manifest=manifest_train_v2.csv', 'data.val_manifest=valid_manifest_v3.csv', 'apex.opt_level=O1', 'data.num_workers=8', 'checkpointing.continue_from=models/deepspeech_checkpoint_epoch_13.pth', 'data.batch_size=64', 'training.epochs=70', 'checkpointing.checkpoint=true', 'checkpointing.save_n_recent_models=10', 'optim=adam']
+[INFO] 2020-10-05 06:53:12,642 etcd_server: Starting etcd server: [['etcd', '--enable-v2', '--data-dir', '/tmp/torchelastic_etcd_datapvztf8fo', '--listen-client-urls', 'http://localhost:54843', '--advertise-client-urls', 'http://localhost:54843', '--listen-peer-urls', 'http://localhost:40939']]
+[WARNING] 2020-10-05 06:53:12,648 connectionpool: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc400065128>: Failed to establish a new connection: [Errno 111] Connection refused',)': /version
+[WARNING] 2020-10-05 06:53:12,648 connectionpool: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc4000652b0>: Failed to establish a new connection: [Errno 111] Connection refused',)': /version
+[WARNING] 2020-10-05 06:53:12,648 connectionpool: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc400065390>: Failed to establish a new connection: [Errno 111] Connection refused',)': /version
+2020-10-05 06:53:12.676388 I | etcdmain: etcd Version: 3.2.26
+2020-10-05 06:53:12.676441 I | etcdmain: Git SHA: Not provided (use ./build instead of go build)
+2020-10-05 06:53:12.676445 I | etcdmain: Go Version: go1.11.6
+2020-10-05 06:53:12.676449 I | etcdmain: Go OS/Arch: linux/amd64
+2020-10-05 06:53:12.676453 I | etcdmain: setting maximum number of CPUs to 64, total number of available CPUs is 64
+2020-10-05 06:53:12.676727 I | embed: listening for peers on http://localhost:40939
+2020-10-05 06:53:12.676804 I | embed: listening for client requests on localhost:54843
+2020-10-05 06:53:12.688248 I | etcdserver: name = default
+2020-10-05 06:53:12.688260 I | etcdserver: data dir = /tmp/torchelastic_etcd_datapvztf8fo
+2020-10-05 06:53:12.688265 I | etcdserver: member dir = /tmp/torchelastic_etcd_datapvztf8fo/member
+2020-10-05 06:53:12.688269 I | etcdserver: heartbeat = 100ms
+2020-10-05 06:53:12.688272 I | etcdserver: election = 1000ms
+2020-10-05 06:53:12.688275 I | etcdserver: snapshot count = 100000
+2020-10-05 06:53:12.688282 I | etcdserver: advertise client URLs = http://localhost:54843
+2020-10-05 06:53:12.688286 I | etcdserver: initial advertise peer URLs = http://localhost:2380
+2020-10-05 06:53:12.688294 I | etcdserver: initial cluster = default=http://localhost:2380
+2020-10-05 06:53:12.860402 I | etcdserver: starting member 8e9e05c52164694d in cluster cdf818194e3a8c32
+2020-10-05 06:53:12.860437 I | raft: 8e9e05c52164694d became follower at term 0
+2020-10-05 06:53:12.860447 I | raft: newRaft 8e9e05c52164694d [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+2020-10-05 06:53:12.860451 I | raft: 8e9e05c52164694d became follower at term 1
+2020-10-05 06:53:12.866970 W | auth: simple token is not cryptographically signed
+2020-10-05 06:53:12.870355 I | etcdserver: starting server... [version: 3.2.26, cluster version: to_be_decided]
+2020-10-05 06:53:12.870677 I | etcdserver: 8e9e05c52164694d as single-node; fast-forwarding 9 ticks (election ticks 10)
+2020-10-05 06:53:12.870971 I | etcdserver/membership: added member 8e9e05c52164694d [http://localhost:2380] to cluster cdf818194e3a8c32
+2020-10-05 06:53:13.860823 I | raft: 8e9e05c52164694d is starting a new election at term 1
+2020-10-05 06:53:13.860903 I | raft: 8e9e05c52164694d became candidate at term 2
+2020-10-05 06:53:13.860942 I | raft: 8e9e05c52164694d received MsgVoteResp from 8e9e05c52164694d at term 2
+2020-10-05 06:53:13.860955 I | raft: 8e9e05c52164694d became leader at term 2
+2020-10-05 06:53:13.860962 I | raft: raft.node: 8e9e05c52164694d elected leader 8e9e05c52164694d at term 2
+2020-10-05 06:53:13.861175 I | etcdserver: setting up the initial cluster version to 3.2
+2020-10-05 06:53:13.881306 N | etcdserver/membership: set the initial cluster version to 3.2
+2020-10-05 06:53:13.881373 I | etcdserver/api: enabled capabilities for version 3.2
+2020-10-05 06:53:13.881424 I | embed: ready to serve client requests
+2020-10-05 06:53:13.881801 E | etcdmain: forgot to set Type=notify in systemd service file?
+2020-10-05 06:53:13.881820 I | etcdserver: published {Name:default ClientURLs:[http://localhost:54843]} to cluster cdf818194e3a8c32
+2020-10-05 06:53:13.899050 N | embed: serving insecure client requests on 127.0.0.1:54843, this is strongly discouraged!
+[INFO] 2020-10-05 06:53:13,902 etcd_server: etcd server ready. version: 3.2.26
+[INFO] 2020-10-05 06:53:13,902 launch: 
+**************************************
+Rendezvous info:
+--rdzv_backend=etcd --rdzv_endpoint=localhost:54843 --rdzv_id=67e2ffaa-9baa-4029-ad7f-ec729aef247c
+**************************************
+
+INFO 2020-10-05 06:53:13,904 Etcd machines: ['http://localhost:54843']
+[INFO] 2020-10-05 06:53:13,909 launch: Using nproc_per_node=8.
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[INFO] 2020-10-05 06:53:14,533 api: [default] starting workers for function: wrapper_fn
+[INFO] 2020-10-05 06:53:14,533 api: [default] Rendezvous'ing worker group
+INFO 2020-10-05 06:53:14,533 Attempting to join next rendezvous
+INFO 2020-10-05 06:53:14,539 New rendezvous state created: {'status': 'joinable', 'version': '1', 'participants': []}
+INFO 2020-10-05 06:53:14,541 Joined rendezvous version 1 as rank 0. Full state: {'status': 'frozen', 'version': '1', 'participants': [0], 'keep_alives': []}
+INFO 2020-10-05 06:53:14,541 Waiting for remaining peers.
+INFO 2020-10-05 06:53:14,542 All peers arrived. Confirming membership.
+INFO 2020-10-05 06:53:14,556 Waiting for confirmations from all peers.
+INFO 2020-10-05 06:53:14,557 Rendezvous version 1 is complete. Final state: {'status': 'final', 'version': '1', 'participants': [0], 'keep_alives': ['/torchelastic/p2p/run_67e2ffaa-9baa-4029-ad7f-ec729aef247c/rdzv/v_1/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-10-05 06:53:14,557 Creating EtcdStore as the c10d::Store implementation
+[INFO] 2020-10-05 06:53:14,561 api: [default] Rendezvous complete for workers.
+Result:
+	restart_count=0
+	group_rank=0
+	group_world_size=1
+	rank stride=8
+	assigned global_ranks=[0, 1, 2, 3, 4, 5, 6, 7]
+	master_addr=gpu-t4-4.c.ekstepspeechrecognition.internal
+	master_port=56853
+
+[INFO] 2020-10-05 06:53:14,562 api: [default] Starting worker group
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+[ERROR] 2020-10-05 06:53:19,599 local_elastic_agent: [default] Worker group failed
+Traceback (most recent call last):
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/agent/server/local_elastic_agent.py", line 190, in _monitor_workers
+    if self._process_context.join(timeout=-1):
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torch/multiprocessing/spawn.py", line 119, in join
+    raise Exception(msg)
+Exception: 
+
+-- Process 0 terminated with the following error:
+Traceback (most recent call last):
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torch/multiprocessing/spawn.py", line 20, in _wrap
+    fn(i, *args)
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/agent/server/local_elastic_agent.py", line 79, in _wrap
+    ret = fn(*args)
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/distributed/launch.py", line 392, in wrapper_fn
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/opt/conda/envs/ekstep/bin/python', '-u', 'train.py', 'data.train_manifest=manifest_train_v2.csv', 'data.val_manifest=valid_manifest_v3.csv', 'apex.opt_level=O1', 'data.num_workers=8', 'checkpointing.continue_from=models/deepspeech_checkpoint_epoch_13.pth', 'data.batch_size=64', 'training.epochs=70', 'checkpointing.checkpoint=true', 'checkpointing.save_n_recent_models=10', 'optim=adam']' returned non-zero exit status 2.
+
+[INFO] 2020-10-05 06:53:19,600 api: [default] Worker group FAILED. 3/3 attempts left; will restart worker group
+[INFO] 2020-10-05 06:53:19,601 api: [default] Stopping worker group
+[INFO] 2020-10-05 06:53:19,602 api: [default] Rendezvous'ing worker group
+INFO 2020-10-05 06:53:19,602 Attempting to join next rendezvous
+INFO 2020-10-05 06:53:19,604 Observed existing rendezvous state: {'status': 'final', 'version': '1', 'participants': [0], 'keep_alives': ['/torchelastic/p2p/run_67e2ffaa-9baa-4029-ad7f-ec729aef247c/rdzv/v_1/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-10-05 06:53:19,674 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "1", "participants": [0], "keep_alives": ["/torchelastic/p2p/run_67e2ffaa-9baa-4029-ad7f-ec729aef247c/rdzv/v_1/rank_0"], "num_workers_waiting": 1}
+INFO 2020-10-05 06:53:29,863 Keep-alive key /torchelastic/p2p/run_67e2ffaa-9baa-4029-ad7f-ec729aef247c/rdzv/v_1/rank_0 is not renewed.
+INFO 2020-10-05 06:53:29,863 Rendevous version 1 is incomplete. 
+INFO 2020-10-05 06:53:29,863 Attempting to destroy it.
+INFO 2020-10-05 06:53:29,865 Destroyed rendezvous version 1 successfully.
+INFO 2020-10-05 06:53:29,865 Previously existing rendezvous state changed. Will re-try joining.
+INFO 2020-10-05 06:53:29,865 Attempting to join next rendezvous
+INFO 2020-10-05 06:53:29,869 New rendezvous state created: {'status': 'joinable', 'version': '2', 'participants': []}
+INFO 2020-10-05 06:53:29,903 Joined rendezvous version 2 as rank 0. Full state: {'status': 'frozen', 'version': '2', 'participants': [0], 'keep_alives': []}
+INFO 2020-10-05 06:53:29,903 Waiting for remaining peers.
+INFO 2020-10-05 06:53:29,904 All peers arrived. Confirming membership.
+INFO 2020-10-05 06:53:29,947 Waiting for confirmations from all peers.
+INFO 2020-10-05 06:53:29,948 Rendezvous version 2 is complete. Final state: {'status': 'final', 'version': '2', 'participants': [0], 'keep_alives': ['/torchelastic/p2p/run_67e2ffaa-9baa-4029-ad7f-ec729aef247c/rdzv/v_2/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-10-05 06:53:29,948 Creating EtcdStore as the c10d::Store implementation
+[INFO] 2020-10-05 06:53:29,971 api: [default] Rendezvous complete for workers.
+Result:
+	restart_count=1
+	group_rank=0
+	group_world_size=1
+	rank stride=8
+	assigned global_ranks=[0, 1, 2, 3, 4, 5, 6, 7]
+	master_addr=gpu-t4-4.c.ekstepspeechrecognition.internal
+	master_port=50807
+
+[INFO] 2020-10-05 06:53:29,971 api: [default] Starting worker group
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+[ERROR] 2020-10-05 06:53:35,006 local_elastic_agent: [default] Worker group failed
+Traceback (most recent call last):
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/agent/server/local_elastic_agent.py", line 190, in _monitor_workers
+    if self._process_context.join(timeout=-1):
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torch/multiprocessing/spawn.py", line 119, in join
+    raise Exception(msg)
+Exception: 
+
+-- Process 0 terminated with the following error:
+Traceback (most recent call last):
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torch/multiprocessing/spawn.py", line 20, in _wrap
+    fn(i, *args)
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/agent/server/local_elastic_agent.py", line 79, in _wrap
+    ret = fn(*args)
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/distributed/launch.py", line 392, in wrapper_fn
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/opt/conda/envs/ekstep/bin/python', '-u', 'train.py', 'data.train_manifest=manifest_train_v2.csv', 'data.val_manifest=valid_manifest_v3.csv', 'apex.opt_level=O1', 'data.num_workers=8', 'checkpointing.continue_from=models/deepspeech_checkpoint_epoch_13.pth', 'data.batch_size=64', 'training.epochs=70', 'checkpointing.checkpoint=true', 'checkpointing.save_n_recent_models=10', 'optim=adam']' returned non-zero exit status 2.
+
+[INFO] 2020-10-05 06:53:35,006 api: [default] Worker group FAILED. 2/3 attempts left; will restart worker group
+[INFO] 2020-10-05 06:53:35,007 api: [default] Stopping worker group
+[INFO] 2020-10-05 06:53:35,007 api: [default] Rendezvous'ing worker group
+INFO 2020-10-05 06:53:35,007 Attempting to join next rendezvous
+INFO 2020-10-05 06:53:35,009 Observed existing rendezvous state: {'status': 'final', 'version': '2', 'participants': [0], 'keep_alives': ['/torchelastic/p2p/run_67e2ffaa-9baa-4029-ad7f-ec729aef247c/rdzv/v_2/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-10-05 06:53:35,096 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "2", "participants": [0], "keep_alives": ["/torchelastic/p2p/run_67e2ffaa-9baa-4029-ad7f-ec729aef247c/rdzv/v_2/rank_0"], "num_workers_waiting": 1}
+INFO 2020-10-05 06:53:45,363 Keep-alive key /torchelastic/p2p/run_67e2ffaa-9baa-4029-ad7f-ec729aef247c/rdzv/v_2/rank_0 is not renewed.
+INFO 2020-10-05 06:53:45,363 Rendevous version 2 is incomplete. 
+INFO 2020-10-05 06:53:45,363 Attempting to destroy it.
+INFO 2020-10-05 06:53:45,364 Destroyed rendezvous version 2 successfully.
+INFO 2020-10-05 06:53:45,364 Previously existing rendezvous state changed. Will re-try joining.
+INFO 2020-10-05 06:53:45,364 Attempting to join next rendezvous
+INFO 2020-10-05 06:53:45,368 New rendezvous state created: {'status': 'joinable', 'version': '3', 'participants': []}
+INFO 2020-10-05 06:53:45,419 Joined rendezvous version 3 as rank 0. Full state: {'status': 'frozen', 'version': '3', 'participants': [0], 'keep_alives': []}
+INFO 2020-10-05 06:53:45,419 Waiting for remaining peers.
+INFO 2020-10-05 06:53:45,420 All peers arrived. Confirming membership.
+INFO 2020-10-05 06:53:45,484 Waiting for confirmations from all peers.
+INFO 2020-10-05 06:53:45,484 Rendezvous version 3 is complete. Final state: {'status': 'final', 'version': '3', 'participants': [0], 'keep_alives': ['/torchelastic/p2p/run_67e2ffaa-9baa-4029-ad7f-ec729aef247c/rdzv/v_3/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-10-05 06:53:45,484 Creating EtcdStore as the c10d::Store implementation
+[INFO] 2020-10-05 06:53:45,489 api: [default] Rendezvous complete for workers.
+Result:
+	restart_count=2
+	group_rank=0
+	group_world_size=1
+	rank stride=8
+	assigned global_ranks=[0, 1, 2, 3, 4, 5, 6, 7]
+	master_addr=gpu-t4-4.c.ekstepspeechrecognition.internal
+	master_port=41799
+
+[INFO] 2020-10-05 06:53:45,489 api: [default] Starting worker group
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+[ERROR] 2020-10-05 06:53:50,524 local_elastic_agent: [default] Worker group failed
+Traceback (most recent call last):
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/agent/server/local_elastic_agent.py", line 190, in _monitor_workers
+    if self._process_context.join(timeout=-1):
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torch/multiprocessing/spawn.py", line 119, in join
+    raise Exception(msg)
+Exception: 
+
+-- Process 0 terminated with the following error:
+Traceback (most recent call last):
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torch/multiprocessing/spawn.py", line 20, in _wrap
+    fn(i, *args)
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/agent/server/local_elastic_agent.py", line 79, in _wrap
+    ret = fn(*args)
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/distributed/launch.py", line 392, in wrapper_fn
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/opt/conda/envs/ekstep/bin/python', '-u', 'train.py', 'data.train_manifest=manifest_train_v2.csv', 'data.val_manifest=valid_manifest_v3.csv', 'apex.opt_level=O1', 'data.num_workers=8', 'checkpointing.continue_from=models/deepspeech_checkpoint_epoch_13.pth', 'data.batch_size=64', 'training.epochs=70', 'checkpointing.checkpoint=true', 'checkpointing.save_n_recent_models=10', 'optim=adam']' returned non-zero exit status 2.
+
+[INFO] 2020-10-05 06:53:50,524 api: [default] Worker group FAILED. 1/3 attempts left; will restart worker group
+[INFO] 2020-10-05 06:53:50,525 api: [default] Stopping worker group
+[INFO] 2020-10-05 06:53:50,525 api: [default] Rendezvous'ing worker group
+INFO 2020-10-05 06:53:50,525 Attempting to join next rendezvous
+INFO 2020-10-05 06:53:50,527 Observed existing rendezvous state: {'status': 'final', 'version': '3', 'participants': [0], 'keep_alives': ['/torchelastic/p2p/run_67e2ffaa-9baa-4029-ad7f-ec729aef247c/rdzv/v_3/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-10-05 06:53:50,627 Added self to waiting list. Rendezvous full state: {"status": "final", "version": "3", "participants": [0], "keep_alives": ["/torchelastic/p2p/run_67e2ffaa-9baa-4029-ad7f-ec729aef247c/rdzv/v_3/rank_0"], "num_workers_waiting": 1}
+INFO 2020-10-05 06:54:00,863 Keep-alive key /torchelastic/p2p/run_67e2ffaa-9baa-4029-ad7f-ec729aef247c/rdzv/v_3/rank_0 is not renewed.
+INFO 2020-10-05 06:54:00,863 Rendevous version 3 is incomplete. 
+INFO 2020-10-05 06:54:00,863 Attempting to destroy it.
+INFO 2020-10-05 06:54:00,864 Destroyed rendezvous version 3 successfully.
+INFO 2020-10-05 06:54:00,864 Previously existing rendezvous state changed. Will re-try joining.
+INFO 2020-10-05 06:54:00,864 Attempting to join next rendezvous
+INFO 2020-10-05 06:54:00,871 New rendezvous state created: {'status': 'joinable', 'version': '4', 'participants': []}
+INFO 2020-10-05 06:54:00,930 Joined rendezvous version 4 as rank 0. Full state: {'status': 'frozen', 'version': '4', 'participants': [0], 'keep_alives': []}
+INFO 2020-10-05 06:54:00,931 Waiting for remaining peers.
+INFO 2020-10-05 06:54:00,931 All peers arrived. Confirming membership.
+INFO 2020-10-05 06:54:00,942 Waiting for confirmations from all peers.
+INFO 2020-10-05 06:54:00,943 Rendezvous version 4 is complete. Final state: {'status': 'final', 'version': '4', 'participants': [0], 'keep_alives': ['/torchelastic/p2p/run_67e2ffaa-9baa-4029-ad7f-ec729aef247c/rdzv/v_4/rank_0'], 'num_workers_waiting': 0}
+INFO 2020-10-05 06:54:00,943 Creating EtcdStore as the c10d::Store implementation
+[INFO] 2020-10-05 06:54:00,947 api: [default] Rendezvous complete for workers.
+Result:
+	restart_count=3
+	group_rank=0
+	group_world_size=1
+	rank stride=8
+	assigned global_ranks=[0, 1, 2, 3, 4, 5, 6, 7]
+	master_addr=gpu-t4-4.c.ekstepspeechrecognition.internal
+	master_port=48213
+
+[INFO] 2020-10-05 06:54:00,947 api: [default] Starting worker group
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+/opt/conda/envs/ekstep/bin/python: can't open file 'train.py': [Errno 2] No such file or directory
+[ERROR] 2020-10-05 06:54:05,979 local_elastic_agent: [default] Worker group failed
+Traceback (most recent call last):
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/agent/server/local_elastic_agent.py", line 190, in _monitor_workers
+    if self._process_context.join(timeout=-1):
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torch/multiprocessing/spawn.py", line 119, in join
+    raise Exception(msg)
+Exception: 
+
+-- Process 0 terminated with the following error:
+Traceback (most recent call last):
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torch/multiprocessing/spawn.py", line 20, in _wrap
+    fn(i, *args)
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/agent/server/local_elastic_agent.py", line 79, in _wrap
+    ret = fn(*args)
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/distributed/launch.py", line 392, in wrapper_fn
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/opt/conda/envs/ekstep/bin/python', '-u', 'train.py', 'data.train_manifest=manifest_train_v2.csv', 'data.val_manifest=valid_manifest_v3.csv', 'apex.opt_level=O1', 'data.num_workers=8', 'checkpointing.continue_from=models/deepspeech_checkpoint_epoch_13.pth', 'data.batch_size=64', 'training.epochs=70', 'checkpointing.checkpoint=true', 'checkpointing.save_n_recent_models=10', 'optim=adam']' returned non-zero exit status 2.
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/ekstep/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/opt/conda/envs/ekstep/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/distributed/launch.py", line 510, in <module>
+    main()
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/distributed/launch.py", line 499, in main
+    elastic_agent.run(spec.role)
+  File "/opt/conda/envs/ekstep/lib/python3.6/site-packages/torchelastic/agent/server/api.py", line 535, in run
+    monitor_result.exceptions,
+torchelastic.agent.server.api.WorkerGroupFailureException: [default] exceeded max_restarts=3
+[INFO] 2020-10-05 06:54:06,016 etcd_server: stopping etcd server
+2020-10-05 06:54:06.016931 N | pkg/osutil: received terminated signal, shutting down...
+2020-10-05 06:54:06.017413 I | etcdserver: skipped leadership transfer for single member cluster
+WARNING: 2020/10/05 06:54:06 grpc: addrConn.transportMonitor exits due to: grpc: the connection is closing
+[INFO] 2020-10-05 06:54:06,020 etcd_server: deleting etcd data dir: /tmp/torchelastic_etcd_datapvztf8fo
